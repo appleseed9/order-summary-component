@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+/*
+    Fonts
+
+    Red Hat Display 500 700 900
+
+*/
+
+/*
+    Variables
+*/
+
+:root {
+    --font-size-base: 16px;
+
+    --color-plan-background: hsl(225, 100%, 94%);
+    --color-two: hsl(245, 75%, 52%);
+    --color-order-background: hsl(225, 100%, 98%);
+    --color-plan-icon: hsl(224, 23%, 55%);
+    --color-paragraph: hsl(223, 47%, 23%);
+    --color--hover: hsl(245, 83%, 68%);
+
+    --order-max-width: 327px;
+    --order-max-width-desktop: 450px;
+    --order-margin: 71px auto;
+    --order-margin-desktop: 102px auto 101px auto;
+}
+
+/*
+    Reset
+*/
+
+:root {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+/*
+    Base style
+*/
+
+html {
+    font-family: "Red Hat Display", Helvetica, Arial, sans-serif;
+    font-size: var(--font-size-base);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background: var(--color-plan-background);
+}
+
+main {
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*
+    Background image
+*/
+
+body {
+    background-image: url("../images/pattern-background-mobile.svg");
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+/*
+    Order
+*/
+
+.order {
+    margin: var(--order-margin);
+    max-width: var(--order-max-width);
+    background: white;
+    text-align: center;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 55px 55px -55px hsl(245, 75%, 52%, 35%);
+}
+
+.order__content {
+    padding: 1.8rem 1.7rem;
+}
+
+.order__title {
+    font-family: "Red Hat Display", Helvetica, Arial, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-shadow: .1px .1px 1px black;
+    color: var(--color-paragraph);
+    margin-bottom: 1rem;
+}
+
+.order__description {
+    font-family: "Red Hat Display", Helvetica, Arial, sans-serif;
+    font-size: .93rem;
+    font-weight: 700;
+    color: var(--color-paragraph);
+    line-height: 1.65;
+    opacity: 45%;
+    padding: 0 .3rem;
+
+    margin-bottom: 1.5rem;
+}
+
+/*
+    Plan
+*/
+
+.plan {
+    background: var(--color-order-background);
+    width: 100%;
+    padding: .9rem 1rem;
+    border-radius: .7rem;
+    text-align: left;
+
+    margin-bottom: 1.7rem;
+}
+
+.plan__icon {
+    display: inline-block;
+    background: url("../images/icon-music.svg") no-repeat;
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+}
+
+.plan__details {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .75rem;
+}
+
+.plan__type {
+    font-family: "Red Hat Display", Helvetica, Arial, sans-serif;
+    font-size: .9rem;
+    font-weight: 800;
+    margin-bottom: .2rem;
+}
+
+.plan__pricing {
+    font-size: .85rem;
+    /* font-weight: 700; */
+    color: var(--color-plan-icon);
+}
+
+.plan__link {
+    float: right;
+    margin-top: 1%;
+    /* width: 33%; */
+    font-family: "Red Hat Display", Helvetica, Arial, sans-serif;
+    font-size: .8rem;
+    font-weight: 800;
+    color: var(--color-two);
+    text-align: right;
+    border: .5rem solid transparent;
+}
+
+.plan__link:hover {
+    color: var(--color--hover);
+    text-decoration: none;
+}
+
+/*
+    Button
+*/
+
+.btn {
+    display: block;
+    line-height: 3.5;
+    background: var(--color-two);
+    color: white;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 700;
+    border-radius: .7rem;
+}
+
+.btn--payment {
+    background: var(--color-two);
+    box-shadow: 0 30px 30px -10px hsla(245, 75%, 52%, 25%);
+    margin-bottom: 1.5rem;
+}
+
+.btn--payment:hover {
+    background: var(--color--hover);
+}
+
+.btn--cancel {
+    display: inline-block;
+    background: none;
+    line-height: initial;
+    margin: 0;
+    color: var(--color-plan-icon);
+    font-weight: 800;
+}
+
+.btn--cancel:hover {
+    color: hsl(227, 45%, 20%);
+    font-weight: 800;
+}
+
+/*
+    Large screen settings
+*/
+
+@media (min-width: 35em) {
+
+    html {
+        font-size: 20px;
+    }
+
+    body {
+        background-image: url("../images/pattern-background-desktop.svg");
+    }
+
+    /*
+        Order
+    */
+
+    .order {
+        max-width: var(--order-max-width-desktop);
+        margin: var(--order-margin-desktop);
+    }
+
+    .order__content {
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+        padding-bottom: 2.35rem;
+    }
+
+    .order__title {
+        margin-bottom: .9rem;
+    }
+
+    .order__description {
+        font-size: .87rem;
+        line-height: 1.45;
+        transform: scaleX(83%);
+        font-weight: 700;
+        margin-bottom: 1.1rem;
+    }
+
+    /*
+        Plan
+    */
+
+    .plan {
+        border-radius: .6rem;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.67rem;
+    }
+
+    .plan__type {
+        font-size: .8rem;
+    }
+
+    .plan__link {
+        font-size: .7rem;
+    }
+
+    /*
+        Button
+    */
+
+    .btn {
+        font-size: .7rem;
+    }
+
+    .btn--payment {
+        margin-bottom: 1.25rem;
+    }
+
+    .btn--cancel {
+        font-size: .75rem;
+    }
+}
